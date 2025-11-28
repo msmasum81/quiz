@@ -124,7 +124,8 @@ body {
         <p class="text-md sm:text-lg font-medium pt-2 text-gray-600">Prepare yourself and good luck!</p>
     </div>
 
-    <button id="start-quiz-button" class="px-12 py-4 sm:px-16 sm:py-5 bg-emerald-600 text-white text-xl sm:text-2xl font-bold rounded-xl shadow-xl hover:bg-emerald-700 transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] focus:ring-4 focus:ring-emerald-300">
+    <!-- FIX: Re-added onclick="startQuiz()" -->
+    <button id="start-quiz-button" onclick="startQuiz()" class="px-12 py-4 sm:px-16 sm:py-5 bg-emerald-600 text-white text-xl sm:text-2xl font-bold rounded-xl shadow-xl hover:bg-emerald-700 transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] focus:ring-4 focus:ring-emerald-300">
         Start Quiz
     </button>
     
@@ -164,7 +165,7 @@ body {
     <!-- Navigation Buttons -->
     <div id="navigation-area" class="mt-6 p-5 bg-white shadow-2xl rounded-2xl flex flex-col sm:flex-row justify-between gap-4 border-t-4 border-gray-200">
         <button id="prev-button" class="px-6 py-3 bg-gray-200 text-gray-700 rounded-xl font-bold transition-colors hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed">Previous</button>
-        <button id="next-button" class="px-6 py-3 bg-indigo-600 text-white rounded-xl font-bold transition-colors hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed">Next Question</button>
+        <button id="next-button" class="px-6 py-3 bg-indigo-600 text-white rounded-xl font-bold transition-colors hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed">Next Question →</button>
     </div>
 </div>
 
@@ -676,14 +677,14 @@ function resetQuiz() {
 }
 
 // --- EVENT LISTENERS (Standard Quiz Navigation) ---
-// These are the default handlers used during the main quiz flow
+
+// Attach event listeners for navigation buttons
 nextButton.addEventListener('click', handleNext);
 prevButton.addEventListener('click', handlePrev);
-// The welcome screen button uses an inline onclick="startQuiz()" for simplicity
 
+// Removed redundant start-quiz-button listener since onclick is now in HTML
+// document.getElementById('start-quiz-button').addEventListener('click', startQuiz); 
 
-// --- INITIALIZATION ---
-// No action required as the welcome screen is visible by default.
 </script>
 
 </body>
