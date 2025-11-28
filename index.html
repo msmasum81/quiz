@@ -291,7 +291,7 @@ function renderQuestion() {
 
     // Update progress and navigation
     updateProgress();
-    updateNavigationButtons();
+    updateNavigationButtons(); // Ensure buttons are updated every time a new question loads
 
     // Build the HTML content for the question
     let htmlContent = `
@@ -334,6 +334,7 @@ function renderQuestion() {
         onclick="${onClick}"
         >
         <span class="text-indigo-600 mr-2">${optionLabels[index]}.</span> ${option}
+        ${isReviewMode && option === questionData.correct ? ' (Correct Answer)' : ''} 
         </button>
         `;
     });
@@ -396,12 +397,16 @@ function updateProgress() {
 
 // Updates the state of the navigation buttons
 function updateNavigationButtons() {
+    // Prev Button Logic
     prevButton.disabled = currentQuestionIndex === 0;
-
+    
+    // FIX: Set button text correctly based on review mode status
     if (isReviewMode) {
+        prevButton.textContent = 'Previous Question'; 
         nextButton.textContent = currentQuestionIndex === quizData.length - 1 ? 'End Review' : 'Next Question';
         nextButton.disabled = false;
     } else {
+        prevButton.textContent = 'Previous'; // Back to standard text in quiz mode
         nextButton.textContent = currentQuestionIndex === quizData.length - 1 ? 'Finish & See Results' : 'Next Question';
         // Disable next if the current question hasn't been answered yet, unless it's the very last question (where 'Finish' is the action)
         nextButton.disabled = userAnswers[currentQuestionIndex] === null && currentQuestionIndex < quizData.length - 1;
@@ -485,6 +490,7 @@ function showResults(timeExpired = false) {
     `;
 
     // Update navigation for results screen
+    // IMPORTANT: Set the PREV button text to initiate the review mode.
     prevButton.textContent = 'Review Answers';
     prevButton.disabled = false;
     nextButton.textContent = 'Start New Quiz';
@@ -502,6 +508,8 @@ function showResults(timeExpired = false) {
 function startReview() {
     isReviewMode = true;
     currentQuestionIndex = 0;
+    
+    // Set the navigation handlers back to handlePrev/handleNext for question navigation
     prevButton.onclick = handlePrev;
     nextButton.onclick = handleNext;
     
@@ -530,6 +538,10 @@ function resetQuiz() {
     // Re-attach original handlers
     prevButton.onclick = handlePrev;
     nextButton.onclick = handleNext;
+    
+    // Reset button text to default before the quiz starts
+    prevButton.textContent = 'Previous';
+    nextButton.textContent = 'Next Question';
 }
 
 // --- EVENT LISTENERS ---
