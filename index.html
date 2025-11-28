@@ -222,11 +222,17 @@ function updateTimer() {
 }
 
 function startTimer() {
+    // FIX: Clear any existing interval before starting a new one
+    if (timerInterval) {
+        clearInterval(timerInterval);
+    }
+    
     timerDisplay.textContent = formatTime(timeLeft); // Initial display
     timerInterval = setInterval(updateTimer, 1000);
 }
 
 function timeExpired() {
+    clearInterval(timerInterval); // Stop timer
     showMessage("Time's Up! ⏱️", "The 50 minutes have expired. Your quiz has been automatically submitted.");
     // Force show results without navigation
     showResults(true);
@@ -238,14 +244,14 @@ function timeExpired() {
 // Function to start the quiz
 function startQuiz() {
     welcomeScreen.style.display = 'none';
-    mainQuizContainer.style.display = 'block'; // Changed to 'block' for better Flex compatibility with inner elements
-    startTimer();
+    mainQuizContainer.style.display = 'block'; 
+    startTimer(); // Start the timer here
     renderQuestion();
 }
 
 // Function to show a custom message/modal instead of alert()
 function showMessage(title, message) {
-    clearInterval(timerInterval); // Pause timer during message
+    clearInterval(timerInterval); // PAUSE TIMER
     const messageBox = document.createElement('div');
     messageBox.className = 'fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center z-50 p-4';
     messageBox.innerHTML = `
@@ -267,7 +273,7 @@ function closeMessage() {
     }
     // Resume timer only if not in results screen
     if (mainQuizContainer.style.display !== 'none' && !isReviewMode) {
-        startTimer();
+        startTimer(); // RESTART TIMER
     }
 }
 
@@ -430,7 +436,7 @@ function handlePrev() {
 
 // Shows the final results screen
 function showResults(timeExpired = false) {
-    clearInterval(timerInterval);
+    clearInterval(timerInterval); // Stop timer when results are shown
     recalculateScore();
     const totalQuestions = quizData.length;
     const percentage = ((score / totalQuestions) * 100).toFixed(1);
@@ -507,6 +513,8 @@ function startReview() {
 
 // Function to reset the quiz
 function resetQuiz() {
+    clearInterval(timerInterval); // Stop any running timer
+    
     // Reset state
     currentQuestionIndex = 0;
     score = 0;
