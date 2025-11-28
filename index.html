@@ -64,6 +64,7 @@ max-width: 100%;
 
 <div class="quiz-container">
 
+<!-- WELCOME SCREEN -->
 <div id="welcome-screen" class="bg-white p-6 sm:p-10 shadow-2xl rounded-2xl flex-grow flex flex-col justify-center items-center text-center">
     <h1 class="text-3xl sm:text-5xl font-extrabold text-indigo-700 mb-6">👋 Welcome to the Science Quiz!</h1>
     
@@ -76,10 +77,15 @@ max-width: 100%;
     <button id="start-quiz-button" onclick="startQuiz()" class="px-8 py-3 sm:px-10 sm:py-4 bg-green-600 text-white text-lg sm:text-xl font-bold rounded-lg shadow-lg hover:bg-green-700 transition-colors transform hover:scale-105">
         Start Quiz
     </button>
+    
+    <!-- Credit Line for Welcome Screen -->
+    <footer class="text-xs text-gray-400 mt-6">Made by Shayan</footer>
 </div>
 
-<div id="main-quiz-container">
+<!-- MAIN QUIZ CONTENT (Hidden until started) -->
+<div id="main-quiz-container" class="flex flex-col flex-grow">
 
+    <!-- Header (Fix Applied: Ensures horizontal alignment of title and timer, and adapts font size) -->
     <header class="text-center py-3 mb-4 bg-white shadow-xl rounded-xl flex flex-col sm:flex-row justify-between items-center px-4 sm:px-6">
         <h1 class="text-xl sm:text-2xl font-bold text-gray-800 mb-2 sm:mb-0">Science Quiz</h1>
         <div class="flex items-center space-x-2">
@@ -90,6 +96,7 @@ max-width: 100%;
         </div>
     </header>
 
+    <!-- Progress and Score -->
     <div id="progress-bar" class="w-full bg-gray-300 rounded-full h-3 mb-4 overflow-hidden">
     <div id="progress-fill" class="bg-indigo-600 h-3 rounded-full transition-all duration-500 ease-in-out" style="width: 0%"></div>
     </div>
@@ -98,13 +105,19 @@ max-width: 100%;
     <span id="score-display">Score: 0</span>
     </div>
 
+    <!-- Quiz Area -->
     <main id="quiz-area" class="bg-white p-4 sm:p-6 shadow-2xl rounded-2xl flex-grow border border-gray-100">
+    <!-- Question and Options will be injected here -->
     </main>
 
+    <!-- Navigation Buttons (Fix Applied: Ensures buttons stack nicely on small screens) -->
     <div id="navigation-area" class="mt-6 p-4 bg-white shadow-xl rounded-xl flex flex-col sm:flex-row justify-between gap-4">
     <button id="prev-button" class="px-6 py-3 bg-gray-300 text-gray-700 rounded-lg font-semibold transition-colors hover:bg-gray-400 disabled:opacity-50">Previous</button>
     <button id="next-button" class="px-6 py-3 bg-indigo-600 text-white rounded-lg font-semibold transition-colors hover:bg-indigo-700 disabled:opacity-50">Next Question</button>
     </div>
+    
+    <!-- Credit Line for Quiz Screen -->
+    <footer class="text-xs text-gray-400 text-center mt-3">Made by Shayan</footer>
 </div>
 
 </div>
@@ -244,7 +257,7 @@ function timeExpired() {
 // Function to start the quiz
 function startQuiz() {
     welcomeScreen.style.display = 'none';
-    mainQuizContainer.style.display = 'block'; 
+    mainQuizContainer.style.display = 'flex'; // Changed to flex to honor the flex-grow class
     startTimer(); // Start the timer here
     renderQuestion();
 }
@@ -400,7 +413,7 @@ function updateNavigationButtons() {
     // Prev Button Logic
     prevButton.disabled = currentQuestionIndex === 0;
     
-    // FIX: Set button text correctly based on review mode status
+    // Set button text correctly based on review mode status
     if (isReviewMode) {
         prevButton.textContent = 'Previous Question'; 
         nextButton.textContent = currentQuestionIndex === quizData.length - 1 ? 'End Review' : 'Next Question';
