@@ -271,6 +271,10 @@ let timerInterval;
 // 40 minutes * 60 seconds/minute = 2400 seconds
 let timeLeft = 40 * 60; 
 
+// NEW: Variables for tracking time taken
+let startTime = null; // Stores the timestamp when the quiz starts (Date.now())
+let timeTakenSeconds = 0; // Stores the final calculated time taken in seconds
+
 // --- DOM REFERENCES ---
 const welcomeScreen = document.getElementById('welcome-screen');
 const mainQuizContainer = document.getElementById('main-quiz-container');
@@ -339,6 +343,30 @@ function timeExpired() {
     showResults(true);
 }
 
+// NEW: Function to calculate elapsed time
+function calculateTimeTaken() {
+    // Only calculate if a start time was recorded
+    if (startTime !== null) {
+        const elapsedTimeMs = Date.now() - startTime;
+        // Store in seconds, rounded to the nearest second
+        timeTakenSeconds = Math.round(elapsedTimeMs / 1000);
+    }
+}
+
+// NEW: Function to format time taken for display on results screen
+function formatTimeTaken(totalSeconds) {
+    const minutes = Math.floor(totalSeconds / 60);
+    const seconds = totalSeconds % 60;
+    
+    let parts = [];
+    if (minutes > 0) {
+        parts.push(`${minutes} Min`);
+    }
+    parts.push(`${seconds} Sec`);
+    
+    return parts.join(' ');
+}
+
 
 // --- QUIZ NAVIGATION & LOGIC ---
 
@@ -348,6 +376,10 @@ function timeExpired() {
 function startQuiz() {
     welcomeScreen.style.display = 'none';
     mainQuizContainer.style.display = 'flex'; 
+    
+    // NEW: Record the exact start time
+    startTime = Date.now();
+    
     startTimer(); 
     renderQuestion();
 }
@@ -578,6 +610,10 @@ function handlePrev() {
  * @param {boolean} [timeExpired=false] - True if the submission was forced by the timer.
  */
 function showResults(timeExpired = false) {
+    // 1. Calculate time taken immediately
+    calculateTimeTaken(); 
+    const formattedTime = formatTimeTaken(timeTakenSeconds);
+    
     clearInterval(timerInterval); // Stop timer
     recalculateScore();
     const totalQuestions = quizData.length;
@@ -602,13 +638,24 @@ function showResults(timeExpired = false) {
         resultColor = 'text-red-700 bg-red-100 border-red-400';
         icon = `<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-red-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>`;
     }
+    
+    // NEW: Time information block
+    let timeInfo = timeExpired ?
+        `<p class="text-xl text-red-600 font-extrabold mt-4 p-2 bg-red-50 rounded-xl">Time Expired! The full 40 minutes elapsed.</p>` :
+        `<div class="flex items-center justify-center text-xl font-extrabold text-gray-700 mt-4 p-3 bg-indigo-50 rounded-xl shadow-inner border border-indigo-200">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-indigo-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.414-1.414L11 9.586V6z" clip-rule="evenodd" /></svg>
+            Time Taken: <span class="text-indigo-600 ml-2">${formattedTime}</span>
+        </div>`;
+
 
     quizArea.innerHTML = `
     <div class="text-center py-10">
-    <h2 class="text-4xl sm:text-5xl font-extrabold text-indigo-600 mb-2">${timeExpired ? 'Submission Forced!' : 'Quiz Complete!'}</h2>
-    <p class="text-xl text-gray-500 mb-8">${answeredCount} questions were answered out of ${totalQuestions}.</p>
+    <h2 class="text-4xl sm:text-5xl font-extrabold text-indigo-600 mb-2">${timeExpired ? 'Submission Forced! ⏱️' : 'Quiz Complete! 🎉'}</h2>
+    <p class="text-xl text-gray-500 mb-2">${answeredCount} questions were answered out of ${totalQuestions}.</p>
     
-    <div class="inline-block p-10 rounded-full border-4 ${resultColor} shadow-xl mb-8">
+    ${timeInfo} <!-- INJECTED TIME TAKEN HERE -->
+
+    <div class="inline-block p-10 rounded-full border-4 ${resultColor} shadow-xl my-8">
         ${icon}
         <p class="text-5xl sm:text-7xl font-black mt-2">${percentage}%</p>
     </div>
@@ -678,6 +725,10 @@ function resetQuiz() {
     userAnswers.fill(null);
     isReviewMode = false;
     timeLeft = 40 * 60; // Reset to 40 minutes
+    
+    // NEW: Reset time tracking variables
+    startTime = null;
+    timeTakenSeconds = 0;
 
     // Reset timer display state if it was red
     timerDisplay.classList.remove('text-red-700', 'font-extrabold', 'animate-pulse');
@@ -705,9 +756,6 @@ function resetQuiz() {
 // Attach event listeners for navigation buttons
 nextButton.addEventListener('click', handleNext);
 prevButton.addEventListener('click', handlePrev);
-
-// Removed redundant start-quiz-button listener since onclick is now in HTML
-// document.getElementById('start-quiz-button').addEventListener('click', startQuiz); 
 
 </script>
 
