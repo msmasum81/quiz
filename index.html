@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ICT Network & Security Quiz</title>
+<title>বাংলা ব্যাকরণ ও নির্মিতি কুইজ</title>
 <!-- Load Tailwind CSS -->
 <script src="https://cdn.tailwindcss.com"></script>
 <!-- Load Inter font -->
@@ -104,36 +104,34 @@ body {
 
 <div class="quiz-container">
 
-<!-- WELCOME SCREEN -->
+<!-- WELCOME SCREEN (স্বাগতম পর্দা) -->
 <div id="welcome-screen" class="bg-white p-8 sm:p-12 shadow-2xl rounded-3xl flex-grow flex flex-col justify-center items-center text-center transform transition-all duration-500 hover:shadow-3xl">
-    <!-- MODIFICATION: Updated Title to "ICT Quiz" -->
-    <h1 class="text-4xl sm:text-6xl font-black text-indigo-700 mb-6 tracking-tight">ICT Quiz</h1>
+    
+    <h1 class="text-4xl sm:text-6xl font-black text-indigo-700 mb-6 tracking-tight">বাংলা ব্যাকরণ কুইজ</h1>
     
     <div class="space-y-4 text-gray-700 max-w-md mx-auto mb-12 p-6 bg-indigo-50 rounded-2xl border-4 border-indigo-200">
         <p class="text-xl sm:text-2xl font-bold flex items-center justify-center">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-500 mr-3" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.414-1.414L11 9.586V6z" clip-rule="evenodd" />
             </svg>
-            <span class="text-indigo-600">40 Questions</span>
+            <span class="text-indigo-600">৫০ টি প্রশ্ন</span> <!-- CONFIRMED: 50 Questions here -->
         </p>
         <p class="text-xl sm:text-2xl font-bold flex items-center justify-center">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-500 mr-3" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.414-1.414L11 9.586V6z" clip-rule="evenodd" />
             </svg>
-            Time Limit: <span class="text-red-500 font-extrabold ml-1">40 Minutes</span>
+            সময়সীমা: <span class="text-red-500 font-extrabold ml-1">৫০ মিনিট</span>
         </p>
-        <p class="text-md sm:text-lg font-medium pt-2 text-gray-600">Prepare yourself and good luck!</p>
+        <p class="text-md sm:text-lg font-medium pt-2 text-gray-600">নিজেকে প্রস্তুত করুন এবং শুভ কামনা রইল!</p>
     </div>
 
-    <!-- FIX: Re-added onclick="startQuiz()" -->
     <button id="start-quiz-button" onclick="startQuiz()" class="px-12 py-4 sm:px-16 sm:py-5 bg-emerald-600 text-white text-xl sm:text-2xl font-bold rounded-xl shadow-xl hover:bg-emerald-700 transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] focus:ring-4 focus:ring-emerald-300">
-        Start Quiz
+        কুইজ শুরু করুন
     </button>
     
-    <!-- MODIFICATION: Added "Made by Shayan" text -->
     <footer class="text-center mt-10">
         <p class="text-sm font-semibold text-gray-600 mb-1">Made by Shayan</p>
-        <p class="text-xs text-gray-400">Quiz content based on a 40-question ICT/Network Security syllabus.</p>
+        <p class="text-xs text-gray-400">প্রশ্নাবলী আপনার দেওয়া নথি 'বাংলা ব্যাকরণ ও নির্মিতি' এর উপর ভিত্তি করে তৈরি।</p>
     </footer>
 </div>
 
@@ -142,19 +140,19 @@ body {
 
     <!-- Header (Title and Timer) -->
     <header class="text-center py-4 mb-6 bg-white shadow-xl rounded-2xl flex flex-col sm:flex-row justify-between items-center px-4 sm:px-8 border-b-4 border-indigo-500">
-        <h1 class="text-2xl sm:text-3xl font-extrabold text-gray-800 mb-2 sm:mb-0">Network Security Mastery</h1>
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-gray-800 mb-2 sm:mb-0">ব্যাকরণ জ্ঞান যাচাই</h1>
         <div class="flex items-center space-x-3 p-2 rounded-lg bg-red-50 border border-red-300">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-600 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
-            <span id="timer-display" class="text-2xl sm:text-3xl font-black text-red-600">40:00</span>
+            <span id="timer-display" class="text-2xl sm:text-3xl font-black text-red-600">50:00</span>
         </div>
     </header>
 
     <!-- Progress Bar and Stats -->
     <div class="flex justify-between text-base sm:text-lg font-semibold text-gray-600 mb-2 px-2">
-        <span id="question-index">Question 1 of 40</span>
-        <span id="score-display" class="text-indigo-600">Score: 0</span>
+        <span id="question-index">প্রশ্ন ১/৫০</span> <!-- CONFIRMED: Initial display is 1/50 -->
+        <span id="score-display" class="text-indigo-600">স্কোর: ০</span>
     </div>
     <div id="progress-bar" class="w-full bg-gray-300 rounded-full h-3 mb-8 overflow-hidden">
         <div id="progress-fill" class="bg-indigo-600 h-3 rounded-full transition-all duration-500 ease-in-out" style="width: 0%"></div>
@@ -162,103 +160,88 @@ body {
 
     <!-- Quiz Area -->
     <main id="quiz-area" class="bg-white p-6 sm:p-8 shadow-2xl rounded-3xl flex-grow border border-gray-100">
-        <div class="text-center py-10"><p class="text-gray-500">Initializing quiz...</p></div>
+        <div class="text-center py-10"><p class="text-gray-500">কুইজ শুরু হচ্ছে...</p></div>
     </main>
 
     <!-- Navigation Buttons -->
     <div id="navigation-area" class="mt-6 p-5 bg-white shadow-2xl rounded-2xl flex flex-col sm:flex-row justify-between gap-4 border-t-4 border-gray-200">
-        <button id="prev-button" class="px-6 py-3 bg-gray-200 text-gray-700 rounded-xl font-bold transition-colors hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed">Previous</button>
-        <button id="next-button" class="px-6 py-3 bg-indigo-600 text-white rounded-xl font-bold transition-colors hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed">Next Question →</button>
+        <button id="prev-button" class="px-6 py-3 bg-gray-200 text-gray-700 rounded-xl font-bold transition-colors hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed">← পূর্ববর্তী</button>
+        <button id="next-button" class="px-6 py-3 bg-indigo-600 text-white rounded-xl font-bold transition-colors hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed">পরবর্তী প্রশ্ন →</button>
     </div>
 </div>
 
 </div>
 
 <script>
-// --- QUIZ DATA (40 Questions from ICT/Network Security Document) ---
+// --- QUIZ DATA (50 Bangla Grammar Questions) ---
 const quizData = [
-    // 1. Network Devices (MAC address)
-    { q: "Which network device uses Media Access Control (MAC) addresses to forward data frames to a specific destination port?", options: ["Hub", "Router", "Switch", "Repeater"], correct: "Switch" },
-    // 2. Network Topology (Star Failure)
-    { q: "In which network topology does the failure of the central hub or switch cause the entire network to stop functioning?", options: ["Bus Topology", "Ring Topology", "Star Topology", "Mesh Topology"], correct: "Star Topology" },
-    // 3. Network Topology (Combining two or more)
-    { q: "What is the term for a network structure combining two or more different standard topologies (Star, Ring, Bus)?", options: ["MAN", "Tree Topology", "Hybrid Topology", "LAN"], correct: "Hybrid Topology" },
-    // 4. Network Type (LAN definition)
-    { q: "A computer network established over a relatively small area, like within a single building or campus, is categorized as a:", options: ["WAN", "MAN", "LAN", "Intranet"], correct: "LAN" },
-    // 5. Malware Type (Trojan Horse)
-    { q: "Which type of malware disguises itself as useful software to trick users into running it and cause damage upon execution?", options: ["Computer Virus", "Worm", "Trojan Horse", "Rootkit"], correct: "Trojan Horse" },
-    // 6. Security (Firewall)
-    { q: "The security wall that monitors and filters incoming/outgoing network traffic based on predetermined security rules is called a:", options: ["Antivirus", "Proxy Server", "Firewall", "Router"], correct: "Firewall" },
-    // 7. Security (CAPTCHA)
-    { q: "What is the process to differentiate a human from a machine by requiring the user to type stylized characters or identify images?", options: ["Phishing", "Spam Filtering", "Captcha", "Digital Signature"], correct: "Captcha" },
-    // 8. Server Definition
-    { q: "A powerful computer that provides shared resources and services, such as file storage or printing, to client computers on a network is known as a:", options: ["Client", "Terminal", "Workstation", "Server"], correct: "Server" },
-    // 9. Data Transmission (Fastest long-distance)
-    { q: "For sending signals over the farthest corners of the world, which transmission medium is cited as highly effective?", options: ["Twisted Pair", "Coaxial Cable", "Optical Fibre", "Radio Waves"], correct: "Optical Fibre" },
-    // 10. Resource Sharing (Cloud Computing Example)
-    { q: "Using web-based services like Gmail or Yahoo for sending emails is a common example of utilizing services based on:", options: ["Peer-to-Peer Networking", "Cloud Computing", "Packet Switching", "Client-Server Architecture"], correct: "Cloud Computing" },
-    // 11. Security Threat (Malware category)
-    { q: "What is the collective term for programming codes or programs that disrupt the smooth function of software, including Viruses, Worms, and Trojan Horses?", options: ["Freeware", "Malware", "Firmware", "Shareware"], correct: "Malware" },
-    // 12. Security (Authentication)
-    { q: "A type of electronic signature used to authenticate the identity of the sender of a message or the signer of a document is called a:", options: ["Watermark", "Hash Code", "Digital Signature", "Token"], correct: "Digital Signature" },
+    // ৬. বাক্য (Sentence)
+    { q: "বাক্যের অর্থ সম্পূর্ণরূপে বোঝার জন্য এক পদ শোনার পর অন্য পদ শোনার ইচ্ছাকে কী বলে?", options: ["আসত্তি", "যোগ্যতা", "আকাঙ্ক্ষা", "অন্বয়"], correct: "আকাঙ্ক্ষা" },
+    { q: "বাক্যের অর্থসংগতি রক্ষা করে পদগুলোকে যথাযথভাবে সাজিয়ে রাখার শর্তের নাম কী?", options: ["আকাঙ্ক্ষা", "আসত্তি", "যোগ্যতা", "সমাপিকা"], correct: "আসত্তি" },
+    { q: "বাক্যের অন্তর্গত পদগুলোর মধ্যে অর্থের সংগতি ও ভাবের মিলবন্ধনকে কী বলে?", options: ["আকাঙ্ক্ষা", "আসত্তি", "যোগ্যতা", "উদ্দেশ্য"], correct: "যোগ্যতা" },
+    { q: "নিচের কোন বাক্যটিতে 'যোগ্যতা' গুণের অভাব ঘটেছে?", options: ["আমরা বড়শি দিয়ে মাছ ধরি।", "সূর্য পূর্ব দিকে উদিত হয়।", "গরু আকাশে ওড়ে।", "সে মন দিয়ে লেখাপড়া করে।"], correct: "গরু আকাশে ওড়ে।" },
+    { q: "এক বা একাধিক পদের দ্বারা যখন বক্তার মনোভাব সম্পূর্ণরূপে প্রকাশ পায়, তখন তাকে কী বলে?", options: ["শব্দ", "পদ", "বাক্য", "খণ্ডবাক্য"], correct: "বাক্য" },
+    { q: "বাক্যে যার সম্পর্কে কিছু বলা হয়, তাকে কী বলে?", options: ["বিধেয়", "উদ্দেশ্য", "কর্ম", "ক্রিয়া"], correct: "উদ্দেশ্য" },
+    { q: "বাক্যে উদ্দেশ্য সম্পর্কে যা বলা হয়, তাকে কী বলে?", options: ["উদ্দেশ্য", "বিধেয়", "কর্তা", "সমাপিকা"], correct: "বিধেয়" },
+    { q: "একটি উদ্দেশ্য ও একটি বিধেয় ক্রিয়ার সমষ্টি যদি নিজে একটি স্বাধীন বাক্য হিসেবে ব্যবহৃত না হয়ে অন্য কোনো বৃহত্তর বাক্যের অংশরূপে ব্যবহৃত হয়, তাকে কী বলে?", options: ["সরল বাক্য", "জটিল বাক্য", "যৌগিক বাক্য", "খণ্ডবাক্য"], correct: "খণ্ডবাক্য" },
+    { q: "একটি বড় বাক্যের অন্তর্গত যে খণ্ডবাক্য তার নিজের অর্থ প্রকাশের জন্য অন্য খণ্ডবাক্যের ওপর নির্ভরশীল নয়, তা হলো:", options: ["অধীন খণ্ডবাক্য", "স্বাধীন খণ্ডবাক্য", "মিশ্র বাক্য", "সরল বাক্য"], correct: "স্বাধীন খণ্ডবাক্য" },
+    { q: "যে খণ্ডবাক্যটি তার অর্থ সম্পূর্ণরূপে প্রকাশ করার জন্য স্বাধীন খণ্ডবাক্যের ওপর নির্ভরশীল, তাকে কী বলে?", options: ["অপ্রধান খণ্ডবাক্য", "স্বাধীন খণ্ডবাক্য", "জটিল বাক্য", "সরল বাক্য"], correct: "অপ্রধান খণ্ডবাক্য" },
+    { q: "যে অধীন খণ্ডবাক্য স্বাধীন খণ্ডবাক্যের যেকোনো পদের অধীন থেকে বিশেষ্যের কাজ করে, তাকে কী বলে?", options: ["বিশেষ্যস্থানীয় অধীন খণ্ডবাক্য", "বিশেষণস্থানীয় অধীন খণ্ডবাক্য", "ক্রিয়া-বিশেষণস্থানীয় অধীন খণ্ডবাক্য", "সরল বাক্য"], correct: "বিশেষ্যস্থানীয় অধীন খণ্ডবাক্য" },
+    { q: "যে বাক্যে একটি কর্তা বা উদ্দেশ্য ও একটিই সমাপিকা ক্রিয়া বা বিধেয় থাকে, তাকে কোন বাক্য বলে?", options: ["জটিল বাক্য", "যৌগিক বাক্য", "সরল বাক্য", "খণ্ডবাক্য"], correct: "সরল বাক্য" },
+    { q: "একটি স্বাধীন বাক্য এবং এক বা একাধিক অধীন বাক্য পরস্পর সাপেক্ষভাবে ব্যবহৃত হলে তাকে কী বলে?", options: ["সরল বাক্য", "মিশ্র বাক্য", "যৌগিক বাক্য", "প্রধান বাক্য"], correct: "মিশ্র বাক্য" },
+    { q: "দুই বা তার অধিক সরল বা জটিল বাক্য মিলিত হয়ে যে সম্পূর্ণ বাক্য গঠন করে, তাকে কী বলে?", options: ["সরল বাক্য", "জটিল বাক্য", "যৌগিক বাক্য", "আশ্রিত খণ্ডবাক্য"], correct: "যৌগিক বাক্য" },
+    { q: "যৌগিক বাক্যের অন্তর্গত খণ্ডবাক্যগুলো যুক্ত করতে সাধারণত কোন অব্যয়গুলো ব্যবহৃত হয়?", options: ["যখন, তখন", "যদিও, তবুও", "যদি, তবে", "ও, এবং, আর, অথচ"], correct: "ও, এবং, আর, অথচ" },
     
-    // --- New Questions 13-40 (Total 40) ---
-    // 13. Network Type (WAN)
-    { q: "A network spanning large geographical areas, often connecting multiple cities or countries, is categorized as a:", options: ["LAN", "MAN", "WAN", "PAN"], correct: "WAN" },
-    // 14. Network Type (MAN)
-    { q: "A network designed for a city or large campus, intermediate in size between a LAN and a WAN, is known as a:", options: ["LAN", "MAN", "WAN", "Intranet"], correct: "MAN" },
-    // 15. Network Topology (Bus)
-    { q: "Which topology connects all computers to a single central cable (backbone), where data is transmitted in both directions?", options: ["Star Topology", "Ring Topology", "Bus Topology", "Mesh Topology"], correct: "Bus Topology" },
-    // 16. Network Topology (Ring)
-    { q: "In which network topology is each node connected to exactly two other nodes, forming a single continuous data pathway?", options: ["Star Topology", "Ring Topology", "Bus Topology", "Tree Topology"], correct: "Ring Topology" },
-    // 17. Network Topology (Mesh)
-    { q: "What is the topology where every device is directly connected to every other device, offering high redundancy?", options: ["Star Topology", "Ring Topology", "Bus Topology", "Mesh Topology"], correct: "Mesh Topology" },
-    // 18. Network Device (Router)
-    { q: "Which device operates at the Network Layer (Layer 3) and uses IP addresses to connect different network segments?", options: ["Hub", "Switch", "Router", "Modem"], correct: "Router" },
-    // 19. Network Device (Modem)
-    { q: "What device converts digital signals from a computer into analog signals for transmission over phone lines (and vice versa)?", options: ["Router", "Switch", "Modem", "Repeater"], correct: "Modem" },
-    // 20. Network Device (Repeater)
-    { q: "A device used to boost or regenerate a signal to extend the maximum distance a data signal can travel is a:", options: ["Bridge", "Router", "Switch", "Repeater"], correct: "Repeater" },
-    // 21. Internet Protocol (IP)
-    { q: "Which fundamental protocol is responsible for addressing and routing data packets across the internet?", options: ["TCP", "HTTP", "IP", "FTP"], correct: "IP" },
-    // 22. Internet Protocol (TCP)
-    { q: "The protocol that ensures reliable, ordered, and error-checked delivery of a stream of bytes between applications is:", options: ["IP", "UDP", "HTTP", "TCP"], correct: "TCP" },
-    // 23. Security Threat (Worm)
-    { q: "A self-replicating program that spreads across networks by exploiting security vulnerabilities without requiring human interaction is a:", options: ["Computer Virus", "Trojan Horse", "Worm", "Spyware"], correct: "Worm" },
-    // 24. Security Threat (Spyware)
-    { q: "Software installed on a user's computer without their knowledge, often to secretly monitor their activities and gather data, is called:", options: ["Adware", "Ransomware", "Spyware", "Rootkit"], correct: "Spyware" },
-    // 25. Security Threat (DoS)
-    { q: "An attack that aims to make a machine or network resource unavailable to its intended users by temporarily or indefinitely disrupting services is known as a:", options: ["Phishing", "Firewall Attack", "Denial of Service (DoS)", "SQL Injection"], correct: "Denial of Service (DoS)" },
-    // 26. Security Technique (Encryption)
-    { q: "The process of converting readable data into an unreadable code (ciphertext) to prevent unauthorized access is called:", options: ["Decryption", "Hashing", "Encryption", "Authentication"], correct: "Encryption" },
-    // 27. Security Technique (Authentication)
-    { q: "What is the method of verifying the identity of a user, process, or device attempting to access a resource?", options: ["Authorization", "Encryption", "Authentication", "Digital Signature"], correct: "Authentication" },
-    // 28. Security Technique (Authorization)
-    { q: "The function of specifying access rights to resources, typically performed after a user has been authenticated, is called:", options: ["Encryption", "Authentication", "Authorization", "Hashing"], correct: "Authorization" },
-    // 29. ICT Concept (Software Piracy)
-    { q: "What is the term for the illegal copying, reproduction, or distribution of software applications for personal or business use?", options: ["Hacking", "Phishing", "Software Piracy", "Spamming"], correct: "Software Piracy" },
-    // 30. ICT Concept (Computer Ethics)
-    { q: "What body of moral principles or values governs the use of computers, networks, and information systems?", options: ["Cyber Law", "Digital Rights", "Computer Ethics", "Privacy Policy"], correct: "Computer Ethics" },
-    // 31. ICT Concept (Spamming)
-    { q: "The use of electronic messaging systems (like email) to send unsolicited bulk messages, typically advertising, is known as:", options: ["Phishing", "Pharming", "Spamming", "Spoofing"], correct: "Spamming" },
-    // 32. Internet Service (DNS)
-    { q: "The service that translates user-friendly domain names (e.g., example.com) into numerical IP addresses is the:", options: ["DHCP", "ARP", "DNS", "NAT"], correct: "DNS" },
-    // 33. Internet Service (HTTPS)
-    { q: "Which protocol is the secure version of the Hypertext Transfer Protocol, using SSL/TLS for encryption?", options: ["HTTP", "FTP", "SMTP", "HTTPS"], correct: "HTTPS" },
-    // 34. Network Cable (Twisted Pair)
-    { q: "What is the most common type of network cable, consisting of four pairs of copper wires twisted together to reduce electromagnetic interference?", options: ["Coaxial Cable", "Fiber Optic", "Ethernet Cable", "Twisted Pair Cable"], correct: "Twisted Pair Cable" },
-    // 35. Network Device (Hub)
-    { q: "A repeater with multiple ports that broadcasts data received on one port to all other ports in a network segment is a:", options: ["Switch", "Router", "Bridge", "Hub"], correct: "Hub" },
-    // 36. Security Practice (MFA)
-    { q: "Using multiple distinct forms of identity verification (e.g., password and a code from a mobile device) to log in is called:", options: ["Single Sign-On (SSO)", "Multi-Factor Authentication (MFA)", "Token Generation", "Biometrics"], correct: "Multi-Factor Authentication (MFA)" },
-    // 37. Security Threat (Phishing)
-    { q: "An attempt to acquire sensitive information (like usernames, passwords, and credit card details) by disguising as a trustworthy entity in an electronic communication is:", options: ["Spoofing", "Hacking", "Phishing", "Firewall Attack"], correct: "Phishing" },
-    // 38. Data Unit (Packet)
-    { q: "What is the basic unit of data transferred at the Network Layer (Layer 3) of the OSI model?", options: ["Frame", "Segment", "Bit", "Packet"], correct: "Packet" },
-    // 39. Data Unit (Frame)
-    { q: "What is the basic unit of data transferred at the Data Link Layer (Layer 2) of the OSI model?", options: ["Packet", "Segment", "Bit", "Frame"], correct: "Frame" },
-    // 40. ICT Storage (Volatile)
-    { q: "Which type of computer memory requires continuous power to maintain the stored data, losing its contents when power is removed?", options: ["ROM", "Hard Disk Drive", "Volatile Memory (RAM)", "SSD"], correct: "Volatile Memory (RAM)" },
+    // ৭. বিরামচিহ্ন (Punctuation)
+    { q: "লিখিত বাক্যে মানুষের আবেগ, অনুভূতি ইত্যাদি ব্যক্ত করার জন্য যে চিহ্নসমূহ ব্যবহার করা হয়, তাকে কী বলে?", options: ["ছেদ-চিহ্ন", "যতিচিহ্ন", "বিরামচিহ্ন", "ওপরের সবকটি"], correct: "ওপরের সবকটি" },
+    { q: "বক্তার বা লেখকের মনোভাবের সমাপ্তি বোঝাতে বাক্যের শেষে কোন চিহ্ন বসে?", options: ["কমা (,)", "সেমিকোলন (;)", "দাঁড়ি (।)", "কোলন (:)"], correct: "দাঁড়ি (।)" },
+    { q: "বক্তার মনে কোনো কিছু জানার আগ্রহ জন্মালে বাক্যের শেষে কোন চিহ্ন বসে?", options: ["জিজ্ঞাসা চিহ্ন (?)", "দাঁড়ি (।)", "বিস্ময়চিহ্ন (!)", "কমা (,)"], correct: "জিজ্ঞাসা চিহ্ন (?)" },
+    { q: "আনন্দ, বেদনা, দুঃখ, ভয়, ঘৃণা ইত্যাদি প্রকাশ করতে এবং সম্বোধন পদের পরে কোন চিহ্ন বসে?", options: ["দাঁড়ি", "কোলন", "হাইফেন", "বিস্ময়চিহ্ন (!)", ], correct: "বিস্ময়চিহ্ন (!)" },
+    { q: "বাক্যে অল্প বিরতি বোঝাতে কোন চিহ্ন বসে?", options: ["দাঁড়ি", "সেমিকোলন", "কমা", "কোলন"], correct: "কমা" },
+    { q: "বাক্যের অর্থ স্পষ্ট করার জন্য কমা কোথায় বসে?", options: ["বাক্যের শেষে", "বাক্যের শুরুতে", "বাক্যের মধ্যে", "সম্বোধনের আগে"], correct: "বাক্যের মধ্যে" },
+    { q: "একই পদের একাধিক শব্দ পাশাপাশি ব্যবহৃত হলে কোন চিহ্ন বসে?", options: ["হাইফেন", "ড্যাশ", "কমা", "কোলন ড্যাশ"], correct: "কমা" },
+    { q: "দুটো বাক্যের মধ্যে ভাব বা অর্থের নিকট সম্পর্ক থাকলে তাদের মাঝে যোগসূত্র রক্ষার জন্য কী ব্যবহার করা হয়?", options: ["কমা", "সেমিকোলন", "কোলন", "দাঁড়ি"], correct: "সেমিকোলন" },
+    { q: "সেমিকোলন চিহ্ন কমার চেয়ে কতগুণ বেশি সময় বিরতি নেয়?", options: ["দ্বিগুণ", "অর্ধেক", "তিনগুণ", "সমান"], correct: "দ্বিগুণ" },
+    { q: "উদাহরণ বা দৃষ্টান্ত বোঝাতে বাক্যে কোন চিহ্ন ব্যবহৃত হয়?", options: ["সেমিকোলন", "কোলন", "হাইফেন", "ড্যাশ"], correct: "কোলন" },
+    { q: "নাটকের সংলাপের আগে কোন চিহ্নটি বসে?", options: ["সেমিকোলন", "ড্যাশ", "কোলন", "বিস্ময়চিহ্ন"], correct: "কোলন" },
+    { q: "দুটো শব্দের সংযোগ বোঝাতে কোন চিহ্ন বসে?", options: ["ড্যাশ", "হাইফেন", "কোলন", "সেমিকোলন"], correct: "হাইফেন" },
+    { q: "সমাসবদ্ধ পদের অংশগুলো বিচ্ছিন্ন করে দেখাবার জন্য কোন চিহ্ন বসে?", options: ["দাঁড়ি", "কমা", "হাইফেন", "ড্যাশ"], correct: "হাইফেন" },
+    { q: "বক্তার মনোভাবের অর্থ সুস্পষ্টভাবে বোঝাতে বাক্যের মধ্যে ব্যবহৃত একটি বিরাম চিহ্ন হলো:", options: ["দাঁড়ি (।)", "বিস্ময়চিহ্ন (!)", "কমা (,)", "জিজ্ঞাসাচিহ্ন (?)"], correct: "কমা (,)" },
+    { q: "অব্যয় বৈপরীত্য বা অনুমান প্রকাশ করলে তাদের আগে কোন চিহ্ন বসে?", options: ["দাঁড়ি", "কমা", "সেমিকোলন", "কোলন ড্যাশ"], correct: "সেমিকোলন" },
+    
+    // ৮. বানান (Spelling)
+    { q: "যেসব তৎসম শব্দের বানানে হ্রস্ব ও দীর্ঘ উভয় স্বর অভিধানসিদ্ধ, সে ক্ষেত্রে এবং অতৎসম শব্দের বানানে কোন স্বর ব্যবহার হবে?", options: ["দীর্ঘস্বর (ঈ, ঊ)", "হ্রস্বস্বর (ই, উ)", "উভয়ই ব্যবহার করা যাবে", "কোনটিই নয়"], correct: "হ্রস্বস্বর (ই, উ)" },
+    { q: "'গরিব', 'চাকরি', 'দিঘি'—এই অতৎসম শব্দগুলোতে কোন স্বরচিহ্ন ব্যবহৃত হবে?", options: ["দীর্ঘ ঈ-কার", "হ্রস্ব ই-কার", "দীর্ঘ ঊ-কার", "হ্রস্ব উ-কার"], correct: "হ্রস্ব ই-কার" },
+    { q: "কয়েকটি স্ত্রীবাচক শব্দের শেষে কোন কার (স্বর) হবে?", options: ["ই-কার", "ঈ-কার", "উ-কার", "ঊ-কার"], correct: "ঈ-কার" },
+    { q: "ভাষা ও জাতির নামের শেষে কোন কার হবে? (যেমন: বাঙালি, ইংরেজি, জাপানি)", options: ["ঈ-কার", "ই-কার", "ঊ-কার", "ও-কার"], correct: "ই-কার" },
+    { q: "বিশেষণবাচক 'আলি'-প্রত্যয়যুক্ত শব্দে কোন কার হবে? (যেমন: সোনালি, রুপালি)", options: ["ঈ-কার", "ই-কার", "ঊ-কার", "ও-কার"], correct: "ই-কার" },
+    { q: "ক্রিয়াপদের বানানে পদান্তে ও-কার (ো) অপরিহার্য কি? (যেমন: আনব, করত, লিখব)", options: ["হ্যাঁ, সবসময়", "না, নয়", "শুধু অনুজ্ঞায়", "কেবল ভবিষ্যৎকালে"], correct: "না, নয়" },
+    { q: "অর্থ বা উচ্চারণ বিভ্রান্তির সুযোগ থাকলে কিছু বিশেষ্য ও বিশেষণ শব্দে কী দেওয়া আবশ্যক?", options: ["দীর্ঘস্বর", "বিসর্গ", "ও-কার", "হাইফেন"], correct: "ও-কার" },
+    { q: "'প্রথমত', 'প্রধানত', 'বস্তুত'—এই পদগুলোতে পদান্তে বিসর্গ (:) বসবে কিনা?", options: ["বসবে", "বসবে না", "মাঝে মাঝে বসবে", "কেবল উদাহরণে বসবে"], correct: "বসবে না" },
+    { q: "পদমধ্যস্থ বিসর্গ কোন শব্দটিতে থাকবে? (বাংলা একাডেমি অনুমোদিত বানানরীতি অনুযায়ী)", options: ["দুস্থ", "নিঃশব্দ", "নিশ্বাস", "নিস্পৃহ"], correct: "নিঃশব্দ" },
+    { q: "যুক্তব্যঞ্জনে (তৎসম শব্দে) ট-বর্গীয় বর্ণের (ট ঠ ড ঢ) পূর্ববর্তী দন্ত্য-ন ধ্বনি কী হয়?", options: ["দন্ত্য-ন (ন)", "মূর্ধন্য-ণ (ণ)", "ং (অনুস্বার)", "ঙ (উয়োঁ)"], correct: "মূর্ধন্য-ণ (ণ)" },
+    { q: "তৎসম শব্দে ঋ, ঋ-কার (ৃ), র, র-ফলা (্র), রেফ (র্), ষ, ক্ষ-এর পর কোন 'ন' হয়?", options: ["দন্ত্য-ন (ন)", "মূর্ধন্য-ণ (ণ)", "দুটিরই ব্যবহার হয়", "কেবল বিদেশী শব্দে 'ন' হয়"], correct: "মূর্ধন্য-ণ (ণ)" },
+    { q: "'প্রণাম' শব্দের দন্ত্য-ন স্থলে মূর্ধন্য-ণ হওয়ার কারণ কী?", options: ["এটি তদ্ভব শব্দ", "'প্র' উপসর্গের ব্যবহার", "স্বরবর্ণের পূর্বে আগমন", "এটি একটি অতৎসম শব্দ"], correct: "'প্র' উপসর্গের ব্যবহার" },
+    { q: "যুক্তব্যঞ্জন গঠনে (অতৎসম শব্দে) ট-বর্গের পূর্বে কোন 'ন' হয়? (যেমন: ইন্টার, লন্ডন)", options: ["মূর্ধন্য-ণ (ণ)", "দন্ত্য-ন (ন)", "রেফ (র্)", "বিসর্গ (:)"], correct: "দন্ত্য-ন (ন)" },
+    { q: "যুক্তব্যঞ্জন গঠনে (তৎসম, অতৎসম সকল শব্দে) ত-বর্গের পূর্বে কোন 'ন' হয়?", options: ["মূর্ধন্য-ণ (ণ)", "দন্ত্য-ন (ন)", "ং (অনুস্বার)", "ঙ (উয়োঁ)"], correct: "দন্ত্য-ন (ন)" },
+    { q: "ঋ কিংবা ঋ-কার (ৃ)-এর পরে কোন 'স' হয়? (যেমন: ঋষি, কৃষি)", options: ["তালব্য-শ (শ)", "মূর্ধন্য-ষ (ষ)", "দন্ত্য-স (স)", "দুটিরই ব্যবহার হয়"], correct: "মূর্ধন্য-ষ (ষ)" },
+    { q: "যুক্তব্যঞ্জন গঠনে (তৎসম শব্দে) ট-বর্গের পূর্বে কোন 'স' হয়? (যেমন: কষ্ট, অষ্টম)", options: ["তালব্য-শ (শ)", "মূর্ধন্য-ষ (ষ)", "দন্ত্য-স (স)", "কোনটিই নয়"], correct: "মূর্ধন্য-ষ (ষ)" },
+    { q: "যুক্তব্যঞ্জন গঠনে (তৎসম, অতৎসম সকল শব্দে) ত-বর্গের পূর্বে কোন 'স' হয়? (যেমন: ইস্তফা, স্বাস্থ্য)", options: ["তালব্য-শ (শ)", "মূর্ধন্য-ষ (ষ)", "দন্ত্য-স (স)", "কোনটিই নয়"], correct: "দন্ত্য-স (স)" },
+    { q: "যুক্তব্যঞ্জন গঠনে (তৎসম, অতৎসম সকল শব্দে) চ-বর্গের পূর্বে কোন 'শ' হয়? (যেমন: আশ্চর্য, নিশ্চয়)", options: ["তালব্য-শ (শ)", "মূর্ধন্য-ষ (ষ)", "দন্ত্য-স (স)", "কোনটিই নয়"], correct: "তালব্য-শ (শ)" },
+    { q: "রেফ-এর পর ব্যঞ্জনবর্ণের দ্বিত্ব হবে কিনা?", options: ["হবে", "হবে না", "শুধুমাত্র তৎসম শব্দে হবে", "শুধুমাত্র অতৎসম শব্দে হবে"], correct: "হবে না" },
+    { q: "সন্ধিতে প্রথম পদের শেষে 'ম্' থাকলে ক-বর্গের পূর্বে 'ম্' স্থানে কী হয়? (যেমন: অহংকার)", options: ["ঙ্ (উয়োঁ)", "ং (অনুস্বার)", "ণ", "ন"], correct: "ং (অনুস্বার)" },
+    
+    // ৯. অভিধান (Dictionary)
+    { q: "ইংরেজি 'Dictionary' শব্দটির বাংলা অর্থ কী?", options: ["শব্দকোষ", "অভিধান", "কোষগ্রন্থ", "ওপরের সবকটি"], correct: "ওপরের সবকটি" },
+    { q: "অভিধানে শব্দের পর শব্দ কীভাবে সাজানো থাকে?", options: ["অর্থের ক্রম অনুসারে", "গুরুত্বের ক্রম অনুসারে", "বিষয়বস্তুর ক্রম অনুসারে", "বর্ণানুক্রমিকভাবে"], correct: "বর্ণানুক্রমিকভাবে" },
+    { q: "অভিধানে যে শব্দের অর্থ দেওয়া হয় এবং যা বোল্ড টাইপে মুদ্রিত থাকে, তাকে কী বলা হয়?", options: ["ভুক্তি", "পদ পরিচয়", "শীর্ষ শব্দ", "অর্থান্তর"], correct: "শীর্ষ শব্দ" },
+    { q: "শীর্ষ শব্দের অর্থ, ব্যাখ্যা ও ব্যবহার যেভাবে বিধৃত থাকে তাকে কী বলা হয়?", options: ["শীর্ষশব্দ", "ভুক্তি", "উচ্চারণ", "ব্যুৎপত্তি"], correct: "ভুক্তি" },
+    { q: "সাধারণ বর্ণানুক্রমে ক-এর পরে কোন বর্ণটি আসে? (অভিধানের ক্রম নয়)", options: ["খ", "ক্ষ", "গ", "ঙ"], correct: "খ" },
+    { q: "অভিধানে ব্যবহৃত বর্ণানুক্রমে 'অ' স্বরবর্ণের পরে কোন চিহ্নটি আসে?", options: ["আ", "ঈ", "ং (অনুস্বার)", "ঃ (বিসর্গ)"], correct: "আ" },
+    { q: "অভিধানে যুক্তাক্ষরের বর্ণানুক্রমে 'ক্ষ' কোন দুটি বর্ণের পরে স্থান পায়?", options: ["ক ও ট", "ক ও ত", "ক ও ষ", "খ ও গ"], correct: "ক ও ষ" },
+    { q: "অভিধানে স্বরবর্ণের বিন্যাসের নমুনা অনুযায়ী 'ক' এরপর 'কআ'-এর আগে কোনটি আসে?", options: ["কঋ", "কই", "কঈ", "কউ"], correct: "কই" },
+    { q: "অভিধান ব্যবহারের ক্ষেত্রে, শীর্ষ শব্দের পরে সাধারণত কোন বিষয়টি নির্দেশ করা হয়?", options: ["পদ পরিচয়", "উচ্চারণ", "অর্থান্তর", "ব্যুৎপত্তি"], correct: "উচ্চারণ" },
+    { q: "অভিধান ব্যবহারের নির্দেশিকায় 'বিণ' বা 'ক্রি' কী নির্দেশ করে?", options: ["উৎস- ভাষা", "বিকল্প শীর্ষশব্দ", "পদ পরিচয়", "ব্যুৎপত্তি"], correct: "পদ পরিচয়" }
 ];
 
 // --- STATE VARIABLES ---
@@ -268,8 +251,8 @@ let score = 0;
 const userAnswers = new Array(quizData.length).fill(null);
 let isReviewMode = false;
 let timerInterval;
-// 40 minutes * 60 seconds/minute = 2400 seconds
-let timeLeft = 40 * 60; 
+// 50 minutes * 60 seconds/minute = 3000 seconds
+let timeLeft = 50 * 60; 
 
 // NEW: Variables for tracking time taken
 let startTime = null; // Stores the timestamp when the quiz starts (Date.now())
@@ -338,7 +321,7 @@ function startTimer() {
  */
 function timeExpired() {
     clearInterval(timerInterval); // Stop timer
-    showMessage("Time's Up! ⏱️", "The 40 minutes have expired. Your quiz has been automatically submitted to calculate your score.");
+    showMessage("সময় শেষ! ⏱️", "৫০ মিনিট সময় শেষ হয়েছে। আপনার কুইজটি ফলাফল গণনার জন্য স্বয়ংক্রিয়ভাবে জমা দেওয়া হয়েছে।");
     // Force show results
     showResults(true);
 }
@@ -360,9 +343,9 @@ function formatTimeTaken(totalSeconds) {
     
     let parts = [];
     if (minutes > 0) {
-        parts.push(`${minutes} Min`);
+        parts.push(`${minutes} মিনিট`);
     }
-    parts.push(`${seconds} Sec`);
+    parts.push(`${seconds} সেকেন্ড`);
     
     return parts.join(' ');
 }
@@ -402,7 +385,7 @@ function showMessage(title, message) {
         <h3 class="text-2xl font-black mb-4 text-indigo-700">${title}</h3>
         <p class="text-gray-700 mb-6">${message}</p>
         <button onclick="closeMessage()" class="w-full py-3 bg-indigo-600 text-white font-bold rounded-xl hover:bg-indigo-700 transition-colors shadow-lg">
-            I Understand
+            বুঝেছি
         </button>
     </div>
     `;
@@ -432,7 +415,7 @@ function renderQuestion() {
     const userAnswer = userAnswers[currentQuestionIndex];
 
     if (!questionData) {
-        quizArea.innerHTML = `<div class="text-center py-10"><p class="text-gray-500">Error loading question.</p></div>`;
+        quizArea.innerHTML = `<div class="text-center py-10"><p class="text-gray-500">প্রশ্ন লোড হচ্ছে না।</p></div>`;
         return;
     }
 
@@ -448,7 +431,7 @@ function renderQuestion() {
     <div class="space-y-4">
     `;
 
-    const optionLabels = ['A', 'B', 'C', 'D'];
+    const optionLabels = ['ক', 'খ', 'গ', 'ঘ']; // Changed to Bangla letters
 
     questionData.options.forEach((option, index) => {
         let classes = "option-button w-full text-left p-4 border-2 border-gray-300 rounded-xl font-medium text-gray-700";
@@ -500,12 +483,12 @@ function renderQuestion() {
         htmlContent += `
         <div class="mt-8 p-6 rounded-xl border-l-4 shadow-md ${feedbackClass}">
         <p class="font-bold text-lg mb-1">
-        ${isCorrect ? '✅ Your Answer Was Correct!' : '❌ Your Answer Was Incorrect.'}
+        ${isCorrect ? '✅ আপনার উত্তর সঠিক ছিল!' : '❌ আপনার উত্তর ভুল ছিল।'}
         </p>
         <p class="text-sm mt-2 text-gray-600">
-        ${userAnswer ? `You chose: <span class="font-semibold text-gray-800">${userAnswer}</span>` : 'You left this question unanswered.'}
+        ${userAnswer ? `আপনি বেছেছিলেন: <span class="font-semibold text-gray-800">${userAnswer}</span>` : 'আপনি উত্তর দেননি।'}
         </p>
-        ${!isCorrect ? `<p class="text-sm mt-1 text-gray-600">The correct answer is: <span class="font-bold text-emerald-600">${questionData.correct}</span></p>` : ''}
+        ${!isCorrect ? `<p class="text-sm mt-1 text-gray-600">সঠিক উত্তরটি হলো: <span class="font-bold text-emerald-600">${questionData.correct}</span></p>` : ''}
         </div>
         `;
     }
@@ -538,17 +521,17 @@ function recalculateScore() {
             score++;
         }
     });
-    scoreDisplayEl.textContent = `Score: ${score}`;
+    scoreDisplayEl.textContent = `স্কোর: ${score}`; // Updated text
 }
 
 /**
  * Updates score display, question index, and the progress bar.
  */
 function updateProgress() {
-    const totalQuestions = quizData.length;
+    const totalQuestions = quizData.length; // This is 50
     const answeredQuestions = userAnswers.filter(a => a !== null).length;
 
-    questionIndexEl.textContent = `Question ${currentQuestionIndex + 1} of ${totalQuestions}`;
+    questionIndexEl.textContent = `প্রশ্ন ${currentQuestionIndex + 1}/${totalQuestions}`; // Dynamic display (1/50)
 
     // Progress bar fills based on answered questions (quiz mode) or current index (review mode)
     const progressBasis = isReviewMode ? currentQuestionIndex + 1 : answeredQuestions;
@@ -564,12 +547,12 @@ function updateNavigationButtons() {
     prevButton.disabled = currentQuestionIndex === 0;
     
     if (isReviewMode) {
-        nextButton.textContent = currentQuestionIndex === quizData.length - 1 ? 'End Review' : 'Next Question →';
-        prevButton.textContent = '← Previous Question'; 
+        nextButton.textContent = currentQuestionIndex === quizData.length - 1 ? 'পর্যালোচনা শেষ' : 'পরবর্তী প্রশ্ন →';
+        prevButton.textContent = '← পূর্ববর্তী প্রশ্ন'; 
         nextButton.disabled = false;
     } else {
-        prevButton.textContent = '← Previous'; 
-        nextButton.textContent = currentQuestionIndex === quizData.length - 1 ? 'Finish & See Results' : 'Next Question →';
+        prevButton.textContent = '← পূর্ববর্তী'; 
+        nextButton.textContent = currentQuestionIndex === quizData.length - 1 ? 'ফলাফল দেখুন' : 'পরবর্তী প্রশ্ন →';
         // Disable 'Next' if not answered and not the last question
         nextButton.disabled = userAnswers[currentQuestionIndex] === null && currentQuestionIndex < quizData.length - 1;
     }
@@ -626,32 +609,32 @@ function showResults(timeExpired = false) {
     let icon;
 
     if (percentage >= 80) {
-        resultMessage = "Outstanding! You have an excellent grasp of the material.";
+        resultMessage = "অসাধারণ! ব্যাকরণের ওপর আপনার চমৎকার ধারণা আছে।";
         resultColor = 'text-emerald-700 bg-emerald-100 border-emerald-400';
         icon = `<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-emerald-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>`;
     } else if (percentage >= 60) {
-        resultMessage = "Great job! You passed, but review the topics you missed.";
+        resultMessage = "খুব ভালো করেছেন! আপনি পাস করেছেন, তবে যে বিষয়গুলো ভুল হয়েছে তা পর্যালোচনা করুন।";
         resultColor = 'text-yellow-700 bg-yellow-100 border-yellow-400';
         icon = `<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-yellow-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.332 16c-.77 1.333.192 3 1.732 3z" /></svg>`;
     } else {
-        resultMessage = "Keep studying! Review the course material and try again.";
+        resultMessage = "আরও অধ্যয়ন চালিয়ে যান! অনুগ্রহ করে পাঠ্য উপাদানটি পর্যালোচনা করে আবার চেষ্টা করুন।";
         resultColor = 'text-red-700 bg-red-100 border-red-400';
         icon = `<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-red-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>`;
     }
     
     // NEW: Time information block
     let timeInfo = timeExpired ?
-        `<p class="text-xl text-red-600 font-extrabold mt-4 p-2 bg-red-50 rounded-xl">Time Expired! The full 40 minutes elapsed.</p>` :
+        `<p class="text-xl text-red-600 font-extrabold mt-4 p-2 bg-red-50 rounded-xl">সময় শেষ! নির্ধারিত ৫০ মিনিট সময় পেরিয়ে গেছে।</p>` :
         `<div class="flex items-center justify-center text-xl font-extrabold text-gray-700 mt-4 p-3 bg-indigo-50 rounded-xl shadow-inner border border-indigo-200">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-indigo-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.414-1.414L11 9.586V6z" clip-rule="evenodd" /></svg>
-            Time Taken: <span class="text-indigo-600 ml-2">${formattedTime}</span>
+            সময় লেগেছে: <span class="text-indigo-600 ml-2">${formattedTime}</span>
         </div>`;
 
 
     quizArea.innerHTML = `
     <div class="text-center py-10">
-    <h2 class="text-4xl sm:text-5xl font-extrabold text-indigo-600 mb-2">${timeExpired ? 'Submission Forced! ⏱️' : 'Quiz Complete! 🎉'}</h2>
-    <p class="text-xl text-gray-500 mb-2">${answeredCount} questions were answered out of ${totalQuestions}.</p>
+    <h2 class="text-4xl sm:text-5xl font-extrabold text-indigo-600 mb-2">${timeExpired ? 'স্বয়ংক্রিয় জমা! ⏱️' : 'কুইজ সম্পন্ন! 🎉'}</h2>
+    <p class="text-xl text-gray-500 mb-2">${totalQuestions} টি প্রশ্নের মধ্যে আপনি ${answeredCount} টি প্রশ্নের উত্তর দিয়েছেন।</p>
     
     ${timeInfo} <!-- INJECTED TIME TAKEN HERE -->
 
@@ -666,15 +649,15 @@ function showResults(timeExpired = false) {
     <div class="grid grid-cols-3 gap-4 mt-10 text-md font-bold max-w-lg mx-auto">
     <div class="p-4 bg-emerald-50 rounded-xl text-emerald-800 border border-emerald-200 shadow-md">
     <p class="font-black text-3xl">${score}</p>
-    <p class="mt-1">Correct</p>
+    <p class="mt-1">সঠিক উত্তর</p>
     </div>
     <div class="p-4 bg-red-50 rounded-xl text-red-800 border border-red-200 shadow-md">
     <p class="font-black text-3xl">${totalQuestions - score}</p>
-    <p class="mt-1">Incorrect</p>
+    <p class="mt-1">ভুল উত্তর</p>
     </div>
     <div class="p-4 bg-gray-50 rounded-xl text-gray-800 border border-gray-200 shadow-md">
     <p class="font-black text-3xl">${unansweredCount}</p>
-    <p class="mt-1">Skipped</p>
+    <p class="mt-1">বাকি ছিল</p>
     </div>
     </div>
 
@@ -682,9 +665,9 @@ function showResults(timeExpired = false) {
     `;
 
     // Update navigation for results screen
-    prevButton.textContent = 'Review Answers';
+    prevButton.textContent = 'উত্তরগুলি পর্যালোচনা করুন';
     prevButton.disabled = false;
-    nextButton.textContent = 'Start New Quiz';
+    nextButton.textContent = 'নতুন কুইজ শুরু করুন';
     nextButton.disabled = false;
 
     // Update progress bar to 100% completion
@@ -724,7 +707,7 @@ function resetQuiz() {
     score = 0;
     userAnswers.fill(null);
     isReviewMode = false;
-    timeLeft = 40 * 60; // Reset to 40 minutes
+    timeLeft = 50 * 60; // Reset to 50 minutes
     
     // NEW: Reset time tracking variables
     startTime = null;
@@ -747,8 +730,8 @@ function resetQuiz() {
     nextButton.onclick = handleNext;
     
     // Reset button text to default 
-    prevButton.textContent = '← Previous';
-    nextButton.textContent = 'Next Question →';
+    prevButton.textContent = '← পূর্ববর্তী';
+    nextButton.textContent = 'পরবর্তী প্রশ্ন →';
 }
 
 // --- EVENT LISTENERS (Standard Quiz Navigation) ---
